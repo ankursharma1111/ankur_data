@@ -1,0 +1,39 @@
+
+version: 2
+
+models:
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: price
+        data_tests:
+          - not_null
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fct_sales
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+      - name: gross_sales
+        data_tests:
+          - not_null
